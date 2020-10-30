@@ -1,0 +1,20 @@
+VAR
+	CmdEnableProcess : BOOL;
+	CommandGiven : BOOL;
+	MC_BR_BarrierCommand_AcpTrak_0 : MC_BR_BarrierCommand_AcpTrak;
+	MC_BR_RoutedMoveAbs_AcpTrak_0 : MC_BR_RoutedMoveAbs_AcpTrak;
+	MC_BR_ShCopyUserData_AcpTrak_0 : MC_BR_ShCopyUserData_AcpTrak;
+	MC_BR_TrgPointEnable_AcpTrak_0 : MC_BR_TrgPointEnable_AcpTrak;
+	MC_BR_TrgPointGetInfo_AcpTrak_0 : MC_BR_TrgPointGetInfo_AcpTrak;
+	TON_0 : TON;
+	PickupTimer : TON;
+	ShuttleAxis : McAxisType;
+	Speed_PP_04 : {REDUND_UNREPLICABLE} REAL := 0.0;
+	Step : Step_enum;
+	SubStep : UDINT;
+	TaskReady : BOOL;
+	WaitingCommand : BOOL;
+	HMI_Barrier_Open : BOOL;
+	HMI_Barrier_Close : BOOL;
+	ShuttleUserData : ShuttleUserData_typ;
+END_VAR

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="Anonymous" Type="User">
+    <Property ID="UserID" Value="1" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Everyone" />
+    </Group>
+  </Element>
+  <Element ID="I4.0 Administrator" Type="User">
+    <Property ID="UserID" Value="2" />
+    <Property ID="Password" Value="hoXxNfwHcY4/tu/wEL4H8y/BVVbTjq/RKJ3FzJszvX+7JCNGSLQ=" />
+    <Group ID="Roles">
+      <Property ID="Role[1]" Value="Administrators" />
+    </Group>
+  </Element>
+</Configuration>

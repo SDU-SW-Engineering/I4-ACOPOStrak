@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="ContentAdvancedDemoPage" height="930" width="1720" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="PowerOnButton" top="340" left="40" width="220" height="60" zIndex="0" text="Power On" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="PowerOffButton" top="340" left="300" width="220" height="60" zIndex="1" text="Power Off" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="ResetButton" top="440" left="40" width="220" height="60" zIndex="2" text="Reset" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="ClearButton" top="440" left="300" width="220" height="60" zIndex="3" text="Clear" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="StopButton" top="540" left="300" width="220" height="60" zIndex="4" text="Stop" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="StartButton" top="540" left="40" width="220" height="60" zIndex="5" text="Start" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SpeedInput" top="660" left="300" width="220" height="60" zIndex="6" maxValue="4" minValue="0.2" value="1" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label1" top="660" left="40" width="220" height="60" zIndex="7" text="Speed (0.2 - 4.0)" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SpeedInput1" top="760" left="300" width="220" height="60" zIndex="8" maxValue="40" minValue="1" value="1" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label2" top="760" left="40" width="220" height="60" zIndex="9" text="Acceleration (1 - 40)" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="SpeedInput2" top="860" left="300" width="220" height="60" zIndex="10" maxValue="40" minValue="1" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label3" top="860" left="40" width="220" height="60" zIndex="11" text="Deceleration (1 - 40)" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="LoadOnTrackButton" top="420" left="1160" width="220" height="60" zIndex="12" text="Load on track" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="LoadOffTrackButton" top="420" left="1460" width="220" height="60" zIndex="16" text="Load off track" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="TaskCompleteCell1Button" top="520" left="1160" width="220" height="60" zIndex="14" text="Task Complete Cell 1" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="TaskCompleteCell2Button" top="520" left="1460" width="220" height="60" zIndex="15" text="Task Complete Cell 2" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="AddJobsButton" top="40" left="1160" width="220" height="320" zIndex="13" text="Add Jobs" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.CheckBox" id="CheckBox1" top="40" left="1460" width="220" zIndex="17" text="Parts to cell 1" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.CheckBox" id="CheckBox2" top="100" left="1460" width="220" zIndex="18" text="Parts to cell 2" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.CheckBox" id="CheckBox3" top="160" left="1460" width="240" zIndex="19" text="Remove fixtures cell 1" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.CheckBox" id="CheckBox4" top="220" left="1460" width="240" zIndex="20" text="Remove fixtures cell 2" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.CheckBox" id="CheckBox5" top="280" left="1460" width="240" zIndex="21" text="Move Assembly" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="WarmRestartButton" top="0" left="620" width="440" height="940" zIndex="22" text="Warm Restart (aka i have fucked up)" textAlign="center" fontSize="23px" bold="true" italic="true" padding="0px 10px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="SafetyResetButton" top="40" left="40" width="480" height="60" zIndex="23" text="Safety Reset" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="TextOutput1" top="240" left="300" width="220" height="60" zIndex="24" textAlign="center" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="Status" top="240" left="40" width="220" height="60" zIndex="25" text="Status:" textAlign="center" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.CheckBox" id="MoveSubAssembly" top="340" left="1460" width="240" zIndex="26" text="Move Sub Assembly" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.Label" id="Label19" top="140" left="40" width="220" height="60" zIndex="27" text="Safety Status:" textAlign="center" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="SafetyOutput" top="140" left="300" width="220" height="60" zIndex="28" textAlign="center" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="OpenBarrierButton" top="620" left="1160" width="220" height="60" zIndex="29" text="Open Barrier" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="CloseBarrierButton" top="620" left="1460" width="220" height="60" zIndex="30" text="Close Barrier" fontSize="20px" />
+  </Widgets>
+</Content>

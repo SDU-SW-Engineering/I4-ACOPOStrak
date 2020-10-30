@@ -1,0 +1,3 @@
+VAR RETAIN
+	gTrack1 : trak_parameter_typ;
+END_VAR

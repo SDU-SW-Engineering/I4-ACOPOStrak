@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="MainPageBinding" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+  <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gTrakAsm.Command.ShuttleStop" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="StopButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gTrakAsm.Command.ShuttleStart" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="StartButton" attribute="value" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::StartMovem:MC_BR_AsmReset_AcpTrak_0.Execute" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="ResetButton" attribute="value" />
+</Binding>
+
+
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gTrakAsm.Parameter.Velocity" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="SpeedInput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::PB1:HMI_Barrier_Open" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="OpenBarrierButton" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::StartMovem:HMI_stop" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="PowerOffButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::StartMovem:HMI_Start" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="PowerOnButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Safety:resetSafety" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="SafetyResetButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gTrakAsm.Parameter.Velocity" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="SpeedInput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gTrakAsm.Parameter.Acceleration" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="SpeedInput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gTrakAsm.Parameter.Deceleration" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="SpeedInput2" attribute="value" />
+</Binding>
+
+
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::StartMovem:MC_BR_AsmReset_AcpTrak_0.Execute" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="ResetButton" attribute="value" />
+</Binding>
+
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::StartMovem:Status" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="TextOutput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Safety_Status" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="SafetyOutput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::PB1:HMI_Barrier_Close" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="CloseBarrierButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:Safety_Status" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="SafetyOutput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MoveSubAssemblyPartBool" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="MoveSubAssembly" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Receip_Han:brestart" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentMainPage" widgetRefId="WarmRestartButton" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

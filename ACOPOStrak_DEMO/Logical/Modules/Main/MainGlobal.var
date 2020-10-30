@@ -1,0 +1,3 @@
+VAR
+	gMain : main_interface_typ;
+END_VAR

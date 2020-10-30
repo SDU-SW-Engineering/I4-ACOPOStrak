@@ -1,0 +1,22 @@
+VAR
+	idx : USINT;
+	em : brdkEM; (*Equipment module*)
+	this : this_typ;
+	MC_BR_TrgPointEnable_AcpTrak_0 : MC_BR_TrgPointEnable_AcpTrak;
+	MC_BR_TrgPointGetInfo_AcpTrak_0 : MC_BR_TrgPointGetInfo_AcpTrak;
+	MC_BR_RoutedMoveVel_AcpTrak_0 : MC_BR_RoutedMoveVel_AcpTrak;
+	MC_BR_SecGetShuttle_AcpTrak_0 : MC_BR_SecGetShuttle_AcpTrak;
+	MC_BR_ElasticMoveVel_AcpTrak_0 : MC_BR_ElasticMoveVel_AcpTrak;
+	axis : McAxisType;
+	MC_BR_ShCopyUserData_AcpTrak_0 : MC_BR_ShCopyUserData_AcpTrak;
+	MC_BR_BarrierCommand_AcpTrak_0 : MC_BR_BarrierCommand_AcpTrak;
+END_VAR
+(*Insert your comment here.*)
+VAR
+	cm : brdkCM;
+	MC_BR_TrgPointEnable_PreTrak : MC_BR_TrgPointEnable_AcpTrak;
+	MC_BR_TrgPointGetInfo_PreTrak : MC_BR_TrgPointGetInfo_AcpTrak;
+	MC_BR_RoutedMoveVel_PreTrak : MC_BR_RoutedMoveVel_AcpTrak;
+	MC_BR_BarrierReadInfo_AcpTrak_0 : MC_BR_BarrierReadInfo_AcpTrak;
+	myTestDirection : McDirectionEnum;
+END_VAR

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="7" ArVersion="C4.72">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="gMain">
+          <Variable Name="cmd">
+            <Variable Name="reset" />
+            <Variable Name="start" />
+            <Variable Name="stop" />
+            <Variable Name="clear" />
+            <Variable Name="safety">
+              <Variable Name="reset" />
+            </Variable>
+          </Variable>
+          <Variable Name="status">
+            <Variable Name="power" />
+            <Variable Name="ready" />
+            <Variable Name="error" />
+            <Variable Name="simulation" />
+            <Variable Name="communication" />
+            <Variable Name="safety">
+              <Variable Name="moduleOK" />
+              <Variable Name="ready" />
+              <Variable Name="resetNeeded" />
+              <Variable Name="started" />
+            </Variable>
+          </Variable>
+        </Variable>
+        <Variable Name="gTrack1">
+          <Variable Name="velocity" />
+          <Variable Name="acceleration" />
+          <Variable Name="deceleration" />
+          <Variable Name="selector" />
+        </Variable>
+        <Variable Name="testbutton" />
+      </GlobalVariables>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

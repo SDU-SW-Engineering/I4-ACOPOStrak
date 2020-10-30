@@ -1,0 +1,60 @@
+﻿{GroupDefinition(0,'NewGroup')}
+
+VAR_GLOBAL {Group(0)}
+    {LINE(1)}
+    cmdReset AT %IX0.0 : BOOL {Custom('SL1.SM1.BOOL10001')};
+    {LINE(2)}
+    safetyStarted AT %QX0.0 : BOOL {Custom('SL1.SM1.BOOL00001')};
+    {LINE(3)}
+    SM4_SafeDigitalOutput01 AT %QX2.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM4.SafeDigitalOutput01')};
+    {LINE(4)}
+    SM4_SafeDigitalOutput02 AT %QX2.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM4.SafeDigitalOutput02')};
+    {LINE(5)}
+    SM4_SafeDigitalOutput03 AT %QX2.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM4.SafeDigitalOutput03')};
+    {LINE(6)}
+    SM4_SafeDigitalOutput04 AT %QX2.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM4.SafeDigitalOutput04')};
+    {LINE(7)}
+    SM5_SafeDigitalOutput01 AT %QX3.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeDigitalOutput01')};
+    {LINE(8)}
+    SM5_SafeDigitalOutput02 AT %QX3.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeDigitalOutput02')};
+    {LINE(9)}
+    SM5_SafeDigitalOutput03 AT %QX3.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeDigitalOutput03')};
+    {LINE(10)}
+    SM5_SafeDigitalOutput04 AT %QX3.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeDigitalOutput04')};
+    {LINE(11)}
+    SM6_SafeDigitalOutput01 AT %QX4.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeDigitalOutput01')};
+    {LINE(12)}
+    SM6_SafeDigitalOutput02 AT %QX4.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeDigitalOutput02')};
+    {LINE(13)}
+    SM6_SafeDigitalOutput03 AT %QX4.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeDigitalOutput03')};
+    {LINE(14)}
+    SM6_SafeDigitalOutput04 AT %QX4.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeDigitalOutput04')};
+    {LINE(15)}
+    safetyOk AT %QX0.1 : BOOL {Custom('SL1.SM1.BOOL00002')};
+    {LINE(16)}
+    resetNeeded AT %QX0.2 : BOOL {Custom('SL1.SM1.BOOL00003')};
+    {LINE(17)}
+    SM4_SafeModuleOK AT %IX4.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM4.SafeModuleOK')};
+    {LINE(18)}
+    SM5_ReleaseOutput AT %QX21.0 : BOOL {Custom('SL1.SM5.ReleaseOutput')};
+    {LINE(19)}
+    SM4_ReleaseOutput AT %QX20.0 : BOOL {Custom('SL1.SM4.ReleaseOutput')};
+    {LINE(20)}
+    SM5_SafeModuleOK AT %IX4.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM5.SafeModuleOK')};
+    {LINE(21)}
+    SM6_SafeModuleOK AT %IX4.4 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM6.SafeModuleOK')};
+    {LINE(22)}
+    SM6_ReleaseOutput AT %QX22.0 : BOOL {Custom('SL1.SM6.ReleaseOutput')};
+    {LINE(23)}
+    eStop_A1 AT %IX6.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalInput01')};
+    {LINE(24)}
+    eStop_A2 AT %IX6.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalInput02')};
+    {LINE(25)}
+    eStop_A3 AT %IX6.2 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalInput03')};
+    {LINE(26)}
+    eStop_A4 AT %IX6.3 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM2.SafeDigitalInput04')};
+    {LINE(27)}
+    eStop_A5 AT %IX16.0 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM3.SafeDigitalInput01')};
+    {LINE(28)}
+    eStop_A6 AT %IX16.1 : SAFEBOOL {SafeAdr(true),Custom('SL1.SM3.SafeDigitalInput02')};
+END_VAR

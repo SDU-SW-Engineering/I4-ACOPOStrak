@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="gSafeDomain_1" Type="sfdomain">
+    <Group ID="DefaultSettings">
+      <Property ID="SafeDomain" Value="1" />
+      <Property ID="Password" Value="e10adc3949ba59abbe56e057f20f883e" />
+      <Property ID="SafeProject" Value="safety" />
+    </Group>
+    <Group ID="DefaultFiles">
+      <Property ID="TargetApplication" Value="safety.sfapp" />
+    </Group>
+  </Element>
+</Configuration>

@@ -1,0 +1,9 @@
+TYPE
+	Step_enum :
+		(
+		CHECK_TRIGGER,
+		GET_USERDATA,
+		PROCESS,
+		SET_USERDATA
+	);
+END_TYPE

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.4.67 SP?>
+<Package Version="1.00.0" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File" Description="Global data types">Global.typ</Object>
+    <Object Type="File" Description="Global variables">Global.var</Object>
+    <Object Type="Package">Documents</Object>
+    <Object Type="Package">Libraries</Object>
+    <Object Type="Program" Language="IEC">StartMovement</Object>
+    <Object Type="Program" Language="IEC">Vis</Object>
+    <Object Type="Package">mappView</Object>
+    <Object Type="Program" Language="IEC">Safety</Object>
+    <Object Type="Program" Language="IEC">SequenceHandler</Object>
+    <Object Type="Program" Language="IEC">PB1</Object>
+    <Object Type="Program" Language="IEC">PP1</Object>
+    <Object Type="Program" Language="IEC">PP2</Object>
+    <Object Type="Program" Language="IEC">PB2</Object>
+    <Object Type="Program" Language="IEC">PP3</Object>
+    <Object Type="Program" Language="IEC">PB3</Object>
+    <Object Type="Program" Language="IEC">PP4</Object>
+    <Object Type="Program" Language="IEC">PP5</Object>
+  </Objects>
+</Package>

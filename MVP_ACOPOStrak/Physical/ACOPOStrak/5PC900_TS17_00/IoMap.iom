@@ -1,0 +1,7 @@
+VAR_CONFIG
+	::Safety:moduleOK AT %IX."epl_icn".ModuleOk;
+	::Safety:resetNeeded AT %IX."epl_icn".resetNeeded;
+	::Safety:resetSafety AT %QX."epl_icn".resetCommand;
+	::Safety:safetyStarted AT %IX."epl_icn".safetyStarted;
+	::Safety:safetyOK AT %IX."epl_icn".safetyOK;
+END_VAR

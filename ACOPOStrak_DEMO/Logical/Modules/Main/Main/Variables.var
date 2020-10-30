@@ -1,0 +1,24 @@
+VAR
+	em : brdkEM; (*Equipment module*)
+END_VAR
+VAR CONSTANT
+	MAX_NUM_SHUTTLES : USINT := 49; (*Maximum Shuttles Handled by the Trak (+1)*)
+END_VAR
+(*sequence control*)
+VAR
+	ShuttleAxis : ARRAY[0..MAX_NUM_SHUTTLES] OF McAxisType;
+	i : USINT;
+END_VAR
+(*FUB*)
+VAR
+	MC_BR_AsmPowerOn_AcpTrak_0 : MC_BR_AsmPowerOn_AcpTrak;
+	MC_BR_AsmPowerOff_AcpTrak_0 : MC_BR_AsmPowerOff_AcpTrak;
+	MC_BR_AsmGetShuttle_AcpTrak_0 : MC_BR_AsmGetShuttle_AcpTrak;
+	this : local_typ;
+	MC_BR_AsmReadStatus_AcpTrak_0 : MC_BR_AsmReadStatus_AcpTrak;
+	MC_BR_AsmReset_AcpTrak_0 : MC_BR_AsmReset_AcpTrak;
+	MC_BR_AsmReadInfo_AcpTrak_0 : MC_BR_AsmReadInfo_AcpTrak;
+	SizeofUserdata : UDINT;
+	idx : USINT;
+	MC_BR_AsmDeleteShuttle_AcpTrak_0 : MC_BR_AsmDeleteShuttle_AcpTrak;
+END_VAR

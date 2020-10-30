@@ -1,0 +1,5 @@
+(*shuttle-UserData structure*)
+VAR
+	testbutton : BOOL;
+	gShuttleUserData : ShuttleUserData_typ;
+END_VAR

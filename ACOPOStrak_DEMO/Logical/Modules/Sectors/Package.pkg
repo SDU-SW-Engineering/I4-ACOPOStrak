@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Package">Track1Sector</Object>
+    <Object Type="Package">Track2Sector</Object>
+    <Object Type="Package">Track3Sector</Object>
+    <Object Type="Package">Track4Sector</Object>
+    <Object Type="Package">Track5Sector</Object>
+    <Object Type="Package">Track6Sector</Object>
+  </Objects>
+</Package>

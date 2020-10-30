@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.4.67?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="5AC901.BX02-00" Type="5AC901.BX02-00" Version="1.0.1.0">
+    <Connection Connector="SY" TargetModule="5PC910.SX02-00" TargetConnector="SY3" />
+  </Module>
+  <Module Name="5AC901.IPLK-00" Type="5AC901.IPLK-00" Version="1.6.0.0">
+    <Connection Connector="SS" TargetModule="5PC910.SX02-00" TargetConnector="SS2" />
+    <Connector Name="IF1">
+      <Parameter ID="CycleTime" Value="800" />
+      <Parameter ID="EplNatSubnet" Value="192.168.102.0" />
+    </Connector>
+  </Module>
+  <Module Name="5LS182.6-2" Type="5LS182.6-2" Version="1.7.0.0">
+    <Connection Connector="PLK2" TargetModule="X20BC8083a" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.2" />
+    </Connection>
+    <Connection Connector="SL" TargetModule="5AC901.BX02-00" TargetConnector="SL1" />
+    <Connector Name="IF1">
+      <Parameter ID="CycleTime" Value="2400" />
+      <Parameter ID="NodeDefinition" Value="Software" />
+      <Parameter ID="TransferOnlyActive" Value="on" />
+    </Connector>
+  </Module>
+  <Module Name="5PC900_TS17_00" Type="5PC900.TS17-00" Version="2.0.2.0">
+    <Connection Connector="SY" TargetModule="5PC910.SX02-00" TargetConnector="SY1" />
+    <Parameter ID="ConfigurationID" Value="ACOPOStrak_Hardware" />
+    <Parameter ID="UserPartitionSize" Value="4096" />
+    <Parameter ID="UserRamDevice" Value="PCI.1.LS182.SRAM" />
+    <Parameter ID="UserRamSize" Value="900000" />
+    <Parameter ID="RemMemDevice" Value="PCI.1.LS182.SRAM" />
+    <Parameter ID="RemMemSize" Value="48000" />
+    <Parameter ID="PermanentPvSize" Value="2000" />
+    <Parameter ID="RemanentGlobalPvSize" Value="1000" />
+    <Parameter ID="TimerDeviceType" Value="EPLX2X" />
+    <Parameter ID="TimerDevice" Value="5LS182.6-2.IF1" />
+    <Parameter ID="TaskClassIdleTime" Value="2400" />
+    <Parameter ID="Cyclic1Duration" Value="2400" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic2Duration" Value="4800" />
+    <Parameter ID="Cyclic2Tolerance" Value="0" />
+    <Parameter ID="Cyclic3Duration" Value="7200" />
+    <Parameter ID="Cyclic3Tolerance" Value="0" />
+    <Parameter ID="Cyclic4Duration" Value="16800" />
+    <Parameter ID="Cyclic4Tolerance" Value="0" />
+    <Parameter ID="Cyclic5Duration" Value="100800" />
+    <Parameter ID="Cyclic5Tolerance" Value="100800" />
+    <Parameter ID="Cyclic6Duration" Value="499200" />
+    <Parameter ID="Cyclic6Tolerance" Value="499200" />
+    <Parameter ID="Cyclic7Duration" Value="1000800" />
+    <Parameter ID="Cyclic7Tolerance" Value="1000800" />
+    <Parameter ID="Cyclic8Duration" Value="9600" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="SvgData" />
+    <Parameter ID="FileDevicePath1" Value="F:\Trak\" />
+    <Parameter ID="TimeZone" Value="150" />
+    <Group ID="FtpUser1" />
+    <Parameter ID="FtpUsername1" Value="admin" />
+    <Parameter ID="FtpUserPassword1" Value="ghWCszoRDpL6ssDCdFw+PZ0AVijnAU4nAzkbp4CAeLk=" Description="password: admin" />
+    <Parameter ID="FtpUserSalt1" Value="1Z+p38Uu" />
+    <Parameter ID="FTPAccessRight1" Value="0" />
+    <Parameter ID="ActivateOpcUa" Value="1" />
+    <Parameter ID="OpcUaInformationModels_PV_Version" Value="1" />
+  </Module>
+  <Module Name="5PC910.SX02-00" Type="5PC910.SX02-00" Version="2.0.3.0">
+    <Connector Name="IF1">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF3">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="192.168.1.100" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+    </Connector>
+    <Connector Name="IF4">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+      <Parameter ID="ActivateDevice" Value="1" />
+    </Connector>
+    <Connector Name="IF5">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF6">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF7">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF8">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF9">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+  </Module>
+</Hardware>

@@ -1,0 +1,7 @@
+VAR_CONFIG
+	::gMain.status.safety.moduleOK AT %IX."epl_icn".ModuleOk;
+	::gMain.status.safety.resetNeeded AT %IX."epl_icn".resetNeeded;
+	::gMain.cmd.safety.reset AT %QX."epl_icn".resetCommand;
+	::gMain.status.safety.started AT %IX."epl_icn".safetyStarted;
+	::gMain.status.safety.ready AT %IX."epl_icn".safetyOK;
+END_VAR

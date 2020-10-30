@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="AssemblyFeature_1" Type="assemblyfeature">
+    <Selector ID="Type" Value="InitShuttleSim">
+      <Group ID="InitShuttleSim[1]">
+        <Property ID="SectorRef" Value="SectorTrack1" />
+        <Property ID="Orientation" Value="Positive" />
+        <Selector ID="ShuttleDefinition" Value="ShuttleSetDefinition">
+          <Property ID="StartPosition" Value="2.0" />
+          <Property ID="NumberOfShuttles" Value="15" />
+          <Property ID="DistnaceBetweenShuttles" Value="0.15" />
+        </Selector>
+      </Group>
+      <Group ID="InitShuttleSim[2]">
+        <Property ID="SectorRef" Value="SectorTrack2" />
+        <Property ID="Orientation" Value="Negative" />
+        <Selector ID="ShuttleDefinition" Value="ShuttleSetDefinition">
+          <Property ID="StartPosition" Value="0.1" />
+          <Property ID="NumberOfShuttles" Value="5" />
+          <Property ID="DistnaceBetweenShuttles" Value="0.15" />
+        </Selector>
+      </Group>
+      <Group ID="InitShuttleSim[3]">
+        <Property ID="SectorRef" Value="SectorTrack3" />
+        <Property ID="Orientation" Value="Negative" />
+        <Selector ID="ShuttleDefinition" Value="ShuttleSetDefinition">
+          <Property ID="StartPosition" Value="0.1" />
+          <Property ID="NumberOfShuttles" Value="5" />
+          <Property ID="DistnaceBetweenShuttles" Value="0.15" />
+        </Selector>
+      </Group>
+      <Group ID="InitShuttleSim[4]">
+        <Property ID="SectorRef" Value="SectorTrack4" />
+        <Property ID="Orientation" Value="Negative" />
+        <Selector ID="ShuttleDefinition" Value="ShuttleSetDefinition">
+          <Property ID="StartPosition" Value="0.1" />
+          <Property ID="NumberOfShuttles" Value="5" />
+          <Property ID="DistnaceBetweenShuttles" Value="0.15" />
+        </Selector>
+      </Group>
+      <Group ID="InitShuttleSim[5]">
+        <Property ID="SectorRef" Value="SectorTrack6" />
+        <Property ID="Orientation" Value="Positive" />
+        <Selector ID="ShuttleDefinition" Value="ShuttleSetDefinition">
+          <Property ID="StartPosition" Value="0.1" />
+          <Property ID="NumberOfShuttles" Value="3" />
+          <Property ID="DistnaceBetweenShuttles" Value="0.15" />
+        </Selector>
+      </Group>
+    </Selector>
+  </Element>
+  <Element ID="AssemblyFeature_2" Type="assemblyfeature">
+    <Selector ID="Type" Value="ShtSectorAutoAttach">
+      <Group ID="Priority[1]">
+        <Property ID="SectorRef" Value="SectorTrack1" />
+        <Property ID="Orientation" Value="KeepSegment" />
+      </Group>
+      <Group ID="Priority[2]">
+        <Property ID="SectorRef" Value="SectorTrack2" />
+        <Property ID="Orientation" Value="KeepSegment" />
+      </Group>
+      <Group ID="Priority[3]">
+        <Property ID="SectorRef" Value="SectorTrack3" />
+        <Property ID="Orientation" Value="KeepSegment" />
+      </Group>
+      <Group ID="Priority[4]">
+        <Property ID="SectorRef" Value="SectorTrack4" />
+        <Property ID="Orientation" Value="KeepSegment" />
+      </Group>
+      <Group ID="Priority[5]">
+        <Property ID="SectorRef" Value="SectorTrack5" />
+        <Property ID="Orientation" Value="KeepSegment" />
+      </Group>
+      <Group ID="Priority[6]">
+        <Property ID="SectorRef" Value="SectorTrack6" />
+        <Property ID="Orientation" Value="KeepSegment" />
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

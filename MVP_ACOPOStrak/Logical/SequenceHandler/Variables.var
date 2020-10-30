@@ -1,0 +1,4 @@
+VAR
+	brestart : BOOL;
+	bootmode : USINT := 1;
+END_VAR

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingsSet id="AdvancedDemo" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Bindings>
+  <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:NeedPartcell1Bool" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="CheckBox1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:EmptyFixtureCell1Bool" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="CheckBox3" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:NeedPartCell2Bool" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="CheckBox2" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:MoveAssemblyBool" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="CheckBox5" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:EmptyFixtureCell2Bool" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="CheckBox4" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:AddJob" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="AddJobsButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gTrakAsm.Command.ShuttleStart" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="StartButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:gTrakAsm.Command.ShuttleStop" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="StopButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::StartMovem:HMI_Start" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="PowerOnButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::StartMovem:HMI_stop" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="PowerOffButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Receip_Han:brestart" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="WarmRestartButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Safety:resetSafety" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="SafetyResetButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::StartMovem:Status" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="TextOutput1" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::PB1:HMI_Barrier_Open" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="OpenBarrierButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::PB1:HMI_Barrier_Close" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="CloseBarrierButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:HMITaskCompleteCell2" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="TaskCompleteCell2Button" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:HMITaskCompleteCell1" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="TaskCompleteCell1Button" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:HMILoadOffTrack" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="LoadOffTrackButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:HMILoadOnTrack" attribute="value" />
+<Target xsi:type="brease" contentRefId="ContentAdvancedDemoPage" widgetRefId="LoadOnTrackButton" attribute="value" />
+</Binding>
+</Bindings>
+</BindingsSet>

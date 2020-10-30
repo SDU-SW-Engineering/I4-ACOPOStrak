@@ -1,0 +1,3 @@
+VAR
+	this : safety_typ; (*local struct*)
+END_VAR

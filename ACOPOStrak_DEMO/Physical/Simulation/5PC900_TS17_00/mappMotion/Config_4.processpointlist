@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <Element ID="ProcessPointList_Sector" Type="processpointlist">
+    <Selector ID="ProcessPoint[0]">
+      <Property ID="Name" Value="PP_Track1" />
+      <Property ID="SectorRef" Value="SectorTrack1" />
+      <Property ID="Position" Value="6.45" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[1]">
+      <Property ID="Name" Value="PP_Track2" />
+      <Property ID="SectorRef" Value="SectorTrack2" />
+      <Property ID="Position" Value="0.45" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[2]">
+      <Property ID="Name" Value="PP_Track3" />
+      <Property ID="SectorRef" Value="SectorTrack3" />
+      <Property ID="Position" Value="0.69" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[3]">
+      <Property ID="Name" Value="PP_Track4" />
+      <Property ID="SectorRef" Value="SectorTrack4" />
+      <Property ID="Position" Value="0.45" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[4]">
+      <Property ID="Name" Value="PP_Track5" />
+      <Property ID="SectorRef" Value="SectorTrack5" />
+      <Property ID="Position" Value="0.45" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+    <Selector ID="ProcessPoint[5]">
+      <Property ID="Name" Value="PP_Track6" />
+      <Property ID="SectorRef" Value="SectorTrack6" />
+      <Property ID="Position" Value="0.45" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="On" />
+    </Selector>
+  </Element>
+  <Element ID="ProcessPointList_Track1" Type="processpointlist">
+    <Selector ID="ProcessPoint[0]">
+      <Property ID="Name" Value="PP_Pre_Track4" />
+      <Property ID="SectorRef" Value="SectorTrack1" />
+      <Property ID="Position" Value="2.94" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[1]">
+      <Property ID="Name" Value="PP_Pre_Track2" />
+      <Property ID="SectorRef" Value="SectorTrack1" />
+      <Property ID="Position" Value="5.73" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+    <Selector ID="ProcessPoint[2]">
+      <Property ID="Name" Value="PP_Pre_Track3" />
+      <Property ID="SectorRef" Value="SectorTrack1" />
+      <Property ID="Position" Value="1.98" />
+      <Property ID="PositionRelativeTo" Value="FromEnd" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
+  </Element>
+</Configuration>

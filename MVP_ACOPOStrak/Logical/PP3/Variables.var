@@ -1,0 +1,15 @@
+VAR
+	Speed_PP_04 : {REDUND_UNREPLICABLE} REAL := 0.0;
+	MC_BR_BarrierCommand_AcpTrak_0 : MC_BR_BarrierCommand_AcpTrak;
+	Step : Step_enum;
+	MC_BR_TrgPointEnable_AcpTrak_0 : MC_BR_TrgPointEnable_AcpTrak;
+	CmdEnableProcess : BOOL;
+	MC_BR_TrgPointGetInfo_AcpTrak_0 : MC_BR_TrgPointGetInfo_AcpTrak;
+	ShuttleAxis : McAxisType;
+	MC_BR_ShCopyUserData_AcpTrak_0 : MC_BR_ShCopyUserData_AcpTrak;
+	MC_BR_RoutedMoveVel_AcpTrak_0 : MC_BR_RoutedMoveVel_AcpTrak;
+	SubStep : UDINT;
+	TaskReady : BOOL;
+	TaskCompleteCell2 : BOOL;
+	ShuttleUserData : ShuttleUserData_typ;
+END_VAR

@@ -1,0 +1,46 @@
+(*Assembly interface*)
+VAR
+	HMITaskCompleteCell2 : BOOL;
+	HMITaskCompleteCell1 : BOOL;
+	AddJob : BOOL;
+	EmptyFixtureCell1 : INT;
+	EmptyFixtureCell1Bool : BOOL;
+	EmptyFixtureCell2 : INT;
+	EmptyFixtureCell2Bool : BOOL;
+END_VAR
+(*shuttle monitor structure for Vis*)
+VAR
+	gShuttleMon : McAcpTrakAssemblyMonData;
+END_VAR
+(*shuttle-UserData structure*)
+VAR
+	gShuttleUserData : ShuttleUserData_typ;
+	gTrakAsm : TrakAsm_type;
+	HMILoadOffTrack : BOOL;
+	LoadOffTrack : BOOL;
+	HMILoadOnTrack : BOOL;
+	LoadOnTrack : BOOL;
+	Locked : BOOL;
+	MoveAssemblyBool : BOOL;
+	MoveAssemblyPart : INT;
+	MoveSubAssemblyPartBool : BOOL;
+	MoveSubAssemblyPart : INT;
+	NeedPartCell1 : INT;
+	NeedPartcell1Bool : BOOL;
+	NeedPartCell2 : INT;
+	NeedPartCell2Bool : BOOL;
+	Ok : BOOL;
+	OutletBarrierLocked : BOOL;
+	Safety_Status : STRING[80];
+	Status_hmi : STRING[80];
+	TaskCompleteCell1 : BOOL;
+	TaskCompleteCell2 : BOOL;
+	Track5_Occupied : BOOL;
+	Track6_Occupied : BOOL;
+	TriggerCount : BOOL;
+	WaitingBarrier : BOOL;
+	WaitingLoadOff : BOOL;
+	WaitingLoadOn : BOOL;
+	WaitingCell1 : BOOL;
+	WaitingCell2 : BOOL;
+END_VAR

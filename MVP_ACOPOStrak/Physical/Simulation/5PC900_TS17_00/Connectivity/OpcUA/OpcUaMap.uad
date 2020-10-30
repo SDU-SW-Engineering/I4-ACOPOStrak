@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OpcUaSource FileVersion="7" ArVersion="C4.72">
+  <Aliases>
+    <ACLAliases />
+    <EURangeViolationAliases />
+    <EURangesAliases />
+    <EngineeringUnitAliases />
+  </Aliases>
+  <DefaultView>
+    <Module Name="&lt;Default&gt;">
+      <GlobalVariables Name="Global Variables">
+        <Variable Name="gTrakAsm">
+          <Variable Name="Command">
+            <Variable Name="Power" />
+            <Variable Name="ShuttleStart" />
+            <Variable Name="ShuttleStop" />
+          </Variable>
+          <Variable Name="Parameter">
+            <Variable Name="Velocity" />
+            <Variable Name="Acceleration" />
+            <Variable Name="Deceleration" />
+          </Variable>
+        </Variable>
+        <Variable Name="AddJob" />
+        <Variable Name="EmptyFixtureCell1Bool" />
+        <Variable Name="EmptyFixtureCell2Bool" />
+        <Variable Name="MoveAssemblyBool" />
+        <Variable Name="NeedPartcell1Bool" />
+        <Variable Name="NeedPartCell2Bool" />
+        <Variable Name="Safety_Status" />
+        <Variable Name="MoveSubAssemblyPartBool" />
+        <Variable Name="HMILoadOffTrack" />
+        <Variable Name="HMILoadOnTrack" />
+        <Variable Name="HMITaskCompleteCell1" />
+        <Variable Name="HMITaskCompleteCell2" />
+        <Variable Name="TaskCompleteCell1" />
+        <Variable Name="TaskCompleteCell2" />
+        <Variable Name="WaitingLoadOff" />
+        <Variable Name="WaitingLoadOn" />
+        <Variable Name="WaitingCell2" />
+        <Variable Name="WaitingCell1" />
+        <Variable Name="LoadOffTrack" />
+        <Variable Name="LoadOnTrack" />
+        <Variable Name="MoveAssemblyPart" />
+        <Variable Name="MoveSubAssemblyPart" />
+        <Variable Name="NeedPartCell1" />
+        <Variable Name="NeedPartCell2" />
+        <Variable Name="EmptyFixtureCell1" />
+        <Variable Name="EmptyFixtureCell2" />
+      </GlobalVariables>
+      <Task Name="StartMovem">
+        <Variable Name="MC_BR_AsmPowerOn_AcpTrak_0">
+          <Variable Name="Execute" />
+          <Variable Name="Done" />
+        </Variable>
+        <Variable Name="MC_BR_AsmPowerOff_AcpTrak_0">
+          <Variable Name="Execute" />
+          <Variable Name="Done" />
+        </Variable>
+        <Variable Name="MC_BR_AsmReset_AcpTrak_0">
+          <Variable Name="Execute" />
+          <Variable Name="Done" />
+        </Variable>
+        <Variable Name="HMI_Start" />
+        <Variable Name="HMI_stop" />
+        <Variable Name="Status" />
+      </Task>
+      <Task Name="PB1">
+        <Variable Name="HMI_Barrier_Close" />
+        <Variable Name="HMI_Barrier_Open" />
+      </Task>
+      <Task Name="Safety">
+        <Variable Name="moduleOK" />
+        <Variable Name="resetNeeded" />
+        <Variable Name="resetSafety" />
+        <Variable Name="safetyOK" />
+        <Variable Name="safetyStarted" />
+      </Task>
+      <Task Name="PP2">
+        <Variable Name="TaskCompleteCell1" />
+      </Task>
+      <Task Name="PP3">
+        <Variable Name="TaskCompleteCell2" />
+      </Task>
+      <Task Name="Receip_Han">
+        <Variable Name="brestart" />
+      </Task>
+    </Module>
+  </DefaultView>
+</OpcUaSource>

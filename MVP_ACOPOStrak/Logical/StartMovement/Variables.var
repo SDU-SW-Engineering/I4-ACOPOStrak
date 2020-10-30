@@ -1,0 +1,55 @@
+(*constants*)
+VAR
+	Status : STRING[80];
+	PowerOffTrack2 : BOOL;
+	MC_BR_SegPowerOff_AcpTrak_9 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_8 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_7 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_6 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_5 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_4 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_3 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_2 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_1 : MC_BR_SegPowerOff_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_9 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_8 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_7 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_6 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_5 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_4 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_3 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_2 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_1 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOn_AcpTrak_0 : MC_BR_SegPowerOn_AcpTrak;
+	MC_BR_SegPowerOff_AcpTrak_0 : MC_BR_SegPowerOff_AcpTrak;
+END_VAR
+VAR CONSTANT
+	NUM_SIM_SHUTTLES : USINT := 5; (*Maximum Shuttles Added in the Simulation*)
+	MAX_NUM_SHUTTLES : USINT := 40; (*Maximum Shuttles Handled by the Trak*)
+END_VAR
+(*add shuttles for simulation*)
+VAR
+	SimShuttlePosition : ARRAY[1..MAX_NUM_SHUTTLES] OF LREAL;
+END_VAR
+(*sequence control*)
+VAR
+	Step : StepEnum;
+	CntShuttle : UINT;
+	ShuttleAxis : ARRAY[1..MAX_NUM_SHUTTLES] OF McAxisType;
+	i : INT;
+END_VAR
+(*FUB*)
+VAR
+	MC_BR_AsmPowerOn_AcpTrak_0 : MC_BR_AsmPowerOn_AcpTrak;
+	MC_BR_AsmPowerOff_AcpTrak_0 : MC_BR_AsmPowerOff_AcpTrak;
+	MC_BR_SecAddShuttle_AcpTrak_0 : MC_BR_SecAddShuttle_AcpTrak;
+	MC_BR_AsmGetShuttle_AcpTrak_0 : MC_BR_AsmGetShuttle_AcpTrak;
+	MC_BR_RoutedMoveVel_AcpTrak_0 : MC_BR_RoutedMoveVel_AcpTrak;
+	MC_Stop_0 : MC_Stop;
+	MC_BR_AsmReadStatus_AcpTrak_0 : MC_BR_AsmReadStatus_AcpTrak;
+	SizeofUserdata : UDINT;
+	MC_BR_AsmReset_AcpTrak_0 : MC_BR_AsmReset_AcpTrak;
+	Shuttles_exist : BOOL;
+	HMI_Start : BOOL;
+	HMI_stop : BOOL;
+END_VAR

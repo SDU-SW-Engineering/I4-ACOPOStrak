@@ -1,0 +1,10 @@
+VAR_CONFIG
+	::Safety:this.cmd.reset AT %QX."X20SLX410".BOOL10001;
+	::Safety:this.status.safetyStarted AT %IX."X20SLX410".BOOL00001;
+	::Safety:this.status.safetyOk AT %IX."X20SLX410".BOOL00002;
+	::Safety:this.status.resetNeeded AT %IX."X20SLX410".BOOL00003;
+	::Safety:this.status.safetyStarted AT %QX."X20CP0484".IF3.safetyStarted;
+	::Safety:this.status.safetyOk AT %QX."X20CP0484".IF3.safetyOK;
+	::Safety:this.status.resetNeeded AT %QX."X20CP0484".IF3.resetNeeded;
+	::Safety:this.cmd.reset AT %IX."X20CP0484".IF3.resetCommand;
+END_VAR

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.2.98?>
+<Package xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="Program" Language="IEC" Description="Task for handling Track 2 sectors">Track1Sector</Object>
+    <Object Type="File" Description="Global data types">Track1Global.typ</Object>
+    <Object Type="File" Description="Global variables">Track1Global.var</Object>
+  </Objects>
+</Package>

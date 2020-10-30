@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.7.4.67?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="X20BB52" Type="X20BB52" Version="1.1.0.0" />
+  <Module Name="X20BM33" Type="X20BM33" Version="1.0.0.6">
+    <Connection Connector="X2X1" TargetModule="X20BB52" TargetConnector="IF6" />
+  </Module>
+  <Module Name="X20BM33a" Type="X20BM33" Version="1.0.0.6">
+    <Connection Connector="X2X1" TargetModule="X20BM33" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM33b" Type="X20BM33" Version="1.0.0.6">
+    <Connection Connector="X2X1" TargetModule="X20BM33a" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM33c" Type="X20BM33" Version="1.0.0.6">
+    <Connection Connector="X2X1" TargetModule="X20BM33b" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM33d" Type="X20BM33" Version="1.0.0.6">
+    <Connection Connector="X2X1" TargetModule="X20BM33c" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20BM33e" Type="X20BM33" Version="1.0.0.6">
+    <Connection Connector="X2X1" TargetModule="X20BM33d" TargetConnector="X2X2" />
+  </Module>
+  <Module Name="X20CP0484" Type="X20CP0484" Version="1.2.1.0">
+    <Connection Connector="SL" TargetModule="X20BB52" TargetConnector="SL1" />
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="192.168.1.200" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+    </Connector>
+    <Connector Name="IF3">
+      <Parameter ID="CycleTime" Value="2400" />
+      <Parameter ID="Mode" Value="CN" />
+      <Parameter ID="NodeID" Value="200" />
+      <Parameter ID="EplNatSubnet" Value="192.168.103.0" />
+      <Group ID="Channel1" />
+      <Parameter ID="ChannelID1" Value="safetyStarted" />
+      <Parameter ID="ChannelDirection1" Value="OUT" />
+      <Group ID="Channel2" />
+      <Parameter ID="ChannelID2" Value="safetyOK" />
+      <Parameter ID="ChannelDirection2" Value="OUT" />
+      <Group ID="Channel3" />
+      <Parameter ID="ChannelID3" Value="resetNeeded" />
+      <Parameter ID="ChannelDirection3" Value="OUT" />
+      <Group ID="Channel4" />
+      <Parameter ID="ChannelID4" Value="resetCommand" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="ACOPOStrak_Safety" />
+    <Parameter ID="TimerDeviceType" Value="SWIOTIMER" />
+    <Parameter ID="Cyclic1Duration" Value="2400" />
+    <Parameter ID="Cyclic1Tolerance" Value="0" />
+    <Parameter ID="Cyclic2Duration" Value="20000" />
+    <Parameter ID="Cyclic2Tolerance" Value="20000" />
+    <Parameter ID="Cyclic3Duration" Value="50000" />
+    <Parameter ID="Cyclic3Tolerance" Value="50000" />
+    <Parameter ID="Cyclic4Duration" Value="100000" />
+    <Parameter ID="Cyclic4Tolerance" Value="100000" />
+    <Parameter ID="Cyclic5Duration" Value="200000" />
+    <Parameter ID="Cyclic5Tolerance" Value="200000" />
+    <Parameter ID="Cyclic6Duration" Value="500000" />
+    <Parameter ID="Cyclic6Tolerance" Value="500000" />
+    <Parameter ID="Cyclic7Duration" Value="1000000" />
+    <Parameter ID="Cyclic7Tolerance" Value="1000000" />
+    <Parameter ID="Cyclic8Duration" Value="10000" />
+    <Parameter ID="Cyclic8Tolerance" Value="30000000" />
+  </Module>
+  <Module Name="X20PS9600" Type="X20PS9600" Version="1.0.1.0">
+    <Connection Connector="PS" TargetModule="X20BB52" TargetConnector="PS1" />
+    <Connection Connector="SS1" TargetModule="X20TB12" TargetConnector="SS" />
+  </Module>
+  <Module Name="X20SI4100" Type="X20SI4100" Version="1.10.9.1">
+    <Connection Connector="SS1" TargetModule="X20TB52" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM33" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20SI4100a" Type="X20SI4100" Version="1.10.9.1">
+    <Connection Connector="SS1" TargetModule="X20TB52a" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM33a" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="SafeModuleID" Value="3" />
+  </Module>
+  <Module Name="X20SLX410" Type="X20SLX410" Version="1.10.10.4">
+    <Connection Connector="SS1" TargetModule="X20TB52b" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM33b" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
+  <Module Name="X20SO4120" Type="X20SO4120" Version="1.10.9.1">
+    <Connection Connector="SS1" TargetModule="X20TB52c" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM33c" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="SafeModuleID" Value="4" />
+    <Parameter ID="DigitalOutput01" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput02" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput03" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput04" Value="viaSafeLOGIC" />
+  </Module>
+  <Module Name="X20SO4120a" Type="X20SO4120" Version="1.10.9.1">
+    <Connection Connector="SS1" TargetModule="X20TB52d" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM33d" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="SafeModuleID" Value="5" />
+    <Parameter ID="DigitalOutput01" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput02" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput03" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput04" Value="viaSafeLOGIC" />
+  </Module>
+  <Module Name="X20SO4120b" Type="X20SO4120" Version="1.10.9.1">
+    <Connection Connector="SS1" TargetModule="X20TB52e" TargetConnector="SS" />
+    <Connection Connector="SL" TargetModule="X20BM33e" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
+    <Parameter ID="SafeModuleID" Value="6" />
+    <Parameter ID="DigitalOutput01" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput02" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput03" Value="viaSafeLOGIC" />
+    <Parameter ID="DigitalOutput04" Value="viaSafeLOGIC" />
+  </Module>
+  <Module Name="X20TB12" Type="X20TB12" Version="1.0.0.0" />
+  <Module Name="X20TB52" Type="X20TB52" Version="1.0.0.1" />
+  <Module Name="X20TB52a" Type="X20TB52" Version="1.0.0.1" />
+  <Module Name="X20TB52b" Type="X20TB52" Version="1.0.0.1" />
+  <Module Name="X20TB52c" Type="X20TB52" Version="1.0.0.1" />
+  <Module Name="X20TB52d" Type="X20TB52" Version="1.0.0.1" />
+  <Module Name="X20TB52e" Type="X20TB52" Version="1.0.0.1" />
+</Hardware>
