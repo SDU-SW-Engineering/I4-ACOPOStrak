@@ -1,6 +1,6 @@
 /* Automation Studio generated header file */
 /* Do not edit ! */
-/* McAcpTrak 5.09.2 */
+/* McAcpTrak 5.11.3 */
 
 #ifndef _MCACPTRAK_
 #define _MCACPTRAK_
@@ -9,7 +9,7 @@ extern "C"
 {
 #endif
 #ifndef _McAcpTrak_VERSION
-#define _McAcpTrak_VERSION 5.09.2
+#define _McAcpTrak_VERSION 5.11.3
 #endif
 
 #include <bur/plctypes.h>
@@ -75,14 +75,17 @@ typedef enum McAcpTrakShManeuverTypeEnum
 } McAcpTrakShManeuverTypeEnum;
 
 typedef enum McAcpTrakShManeuverReasonEnum
-{	mcACPTRAK_REASON_NONE = 7,
+{	mcACPTRAK_REASON_UNSPECIFIED = 0,
 	mcACPTRAK_REASON_SHUTTLE = 1,
-	mcACPTRAK_REASON_BARRIER = 3,
 	mcACPTRAK_REASON_LOCAL_VEL_LIMIT = 2,
-	mcACPTRAK_REASON_UNSPECIFIED = 0,
+	mcACPTRAK_REASON_BARRIER = 3,
+	mcACPTRAK_REASON_SECTOREND = 4,
 	mcACPTRAK_REASON_SECTORSWITCH = 5,
 	mcACPTRAK_REASON_LOGISTICS = 6,
-	mcACPTRAK_REASON_SECTOREND = 4
+	mcACPTRAK_REASON_NONE = 7,
+	mcACPTRAK_REASON_LOCAL_ACC_LIMIT = 8,
+	mcACPTRAK_REASON_UNCONTROLLED = 9,
+	mcACPTRAK_REASON_RECONTROLLED = 10
 } McAcpTrakShManeuverReasonEnum;
 
 typedef enum McAcpTrakSelectShSideEnum
@@ -147,6 +150,69 @@ typedef enum McAcpTrakPLCopenStateEnum
 	mcACPTRAK_STARTUP,
 	mcACPTRAK_INVALID_CONFIGURATION
 } McAcpTrakPLCopenStateEnum;
+
+typedef enum McAcpTrakShRelativeAlignmentEnum
+{	mcACPTRAK_ALIGNED_FRONT_TO_BACK,
+	mcACPTRAK_ALIGNED_BACK_TO_FRONT,
+	mcACPTRAK_ALIGNED_FRONT_TO_FRONT,
+	mcACPTRAK_ALIGNED_BACK_TO_BACK
+} McAcpTrakShRelativeAlignmentEnum;
+
+typedef enum McAcpTrakShRelativeRefPointEnum
+{	mcACPTRAK_DIST_CENTER_TO_CENTER,
+	mcACPTRAK_DIST_CENTER_TO_EXTENT,
+	mcACPTRAK_DIST_EXTENT_TO_CENTER,
+	mcACPTRAK_DIST_EXTENT_TO_EXTENT
+} McAcpTrakShRelativeRefPointEnum;
+
+typedef enum McAcpTrakShLocalLimitCmdEnum
+{	mcACPTRAK_LL_ADD_SHUTTLE,
+	mcACPTRAK_LL_REMOVE_SHUTTLE
+} McAcpTrakShLocalLimitCmdEnum;
+
+typedef enum McAFSSDShOnSecOrientEnum
+{	mcAFSSDSOSO_POS = 0,
+	mcAFSSDSOSO_NEG = 1
+} McAFSSDShOnSecOrientEnum;
+
+typedef enum McAFSSDShOnSecDefEnum
+{	mcAFSSDSOSD_SNG_SH = 0,
+	mcAFSSDSOSD_SET_OF_SH = 1
+} McAFSSDShOnSecDefEnum;
+
+typedef enum McAFSTShTrcCfgSecRstEnum
+{	mcAFSTSTCSR_ON = 0,
+	mcAFSTSTCSR_OFF = 1
+} McAFSTShTrcCfgSecRstEnum;
+
+typedef enum McAFSAAPrioOrientEnum
+{	mcAFSAAPO_KEEP_SEG_ORIENT = 0,
+	mcAFSAAPO_POS = 1,
+	mcAFSAAPO_NEG = 2
+} McAFSAAPrioOrientEnum;
+
+typedef enum McAFLLScpEnum
+{	mcAFLLS_ALL_SH = 0,
+	mcAFLLS_SNG_SH = 1
+} McAFLLScpEnum;
+
+typedef enum McAFLLLocEnum
+{	mcAFLLL_SEC = 0,
+	mcAFLLL_CRV_AREA = 1,
+	mcAFLLL_DUALTRK_AREA = 2
+} McAFLLLocEnum;
+
+typedef enum McAFLLMotLimVelEnum
+{	mcAFLLMLV_NOT_USE = 0,
+	mcAFLLMLV_BASIC = 1,
+	mcAFLLMLV_ADV = 2
+} McAFLLMotLimVelEnum;
+
+typedef enum McAFLLMotLimAccEnum
+{	mcAFLLMLA_NOT_USE = 0,
+	mcAFLLMLA_BASIC = 1,
+	mcAFLLMLA_ADV = 2
+} McAFLLMotLimAccEnum;
 
 typedef enum McSCSegPosRelToEnum
 {	mcSCSPRT_ST_OF_SEG = 0,
@@ -325,6 +391,7 @@ typedef struct McAcpTrakSegInfoType
 typedef struct McAcpTrakTrgPointGetInfoType
 {	struct McAxisType Axis;
 	enum McAcpTrakTrgPointEventEnum Event;
+	plcbit ShuttleControlled;
 } McAcpTrakTrgPointGetInfoType;
 
 typedef struct McAcpTrakBarrierInfoType
@@ -385,6 +452,130 @@ typedef struct McAcpTrakSecGetShAddInfoType
 	double Position;
 	enum McDirectionEnum Orientation;
 } McAcpTrakSecGetShAddInfoType;
+
+typedef struct McAcpTrakAdvGetMinShDistParType
+{	enum McAcpTrakShRelativeRefPointEnum MeasurePointsMode;
+	struct McAxisType* Shuttle1;
+	struct McAxisType* Shuttle2;
+} McAcpTrakAdvGetMinShDistParType;
+
+typedef struct McAcpTrakAsmGetMinShDistType
+{	double Curve;
+	double Junction;
+	double Straight;
+} McAcpTrakAsmGetMinShDistType;
+
+typedef struct McAFCCplgObjType
+{	plcstring Name[251];
+	unsigned short ShuttleCount;
+	struct McCfgReferenceType CamAutomatReference;
+	struct McCfgReferenceType CamListReference;
+} McAFCCplgObjType;
+
+typedef struct McCfgAsmFeatCplgType
+{	struct McCfgUnboundedArrayType CouplingObject;
+} McCfgAsmFeatCplgType;
+
+typedef struct McAFSSDShOnSecDefSngShType
+{	struct McCfgUnboundedArrayType Position;
+} McAFSSDShOnSecDefSngShType;
+
+typedef struct McAFSSDShOnSecDefSetOfShType
+{	double StartPosition;
+	unsigned char NumberOfShuttles;
+	double DistanceBetweenShuttles;
+} McAFSSDShOnSecDefSetOfShType;
+
+typedef struct McAFSSDShOnSecDefType
+{	enum McAFSSDShOnSecDefEnum Type;
+	struct McAFSSDShOnSecDefSngShType SingleShuttle;
+	struct McAFSSDShOnSecDefSetOfShType SetOfShuttles;
+} McAFSSDShOnSecDefType;
+
+typedef struct McAFSSDShOnSecType
+{	struct McCfgReferenceType SectorReference;
+	enum McAFSSDShOnSecOrientEnum Orientation;
+	struct McAFSSDShOnSecDefType Definition;
+} McAFSSDShOnSecType;
+
+typedef struct McCfgAsmFeatSimShDefType
+{	struct McCfgUnboundedArrayType ShuttleOnSector;
+} McCfgAsmFeatSimShDefType;
+
+typedef struct McAFSTShTrcCfgType
+{	unsigned short ShuttleCount;
+	struct McCfgReferenceType SectorReference;
+	enum McAFSTShTrcCfgSecRstEnum SectorRestricted;
+} McAFSTShTrcCfgType;
+
+typedef struct McCfgAsmFeatShTraceType
+{	struct McAFSTShTrcCfgType ShuttleTraceConfiguration;
+} McCfgAsmFeatShTraceType;
+
+typedef struct McAFSAAPrioType
+{	struct McCfgReferenceType SectorReference;
+	enum McAFSAAPrioOrientEnum Orientation;
+} McAFSAAPrioType;
+
+typedef struct McCfgAsmFeatShAutAttType
+{	struct McCfgUnboundedArrayType Priority;
+} McCfgAsmFeatShAutAttType;
+
+typedef struct McAFLLScpSngShType
+{	plcstring LocalLimitName[251];
+} McAFLLScpSngShType;
+
+typedef struct McAFLLScpType
+{	enum McAFLLScpEnum Type;
+	struct McAFLLScpSngShType SingleShuttles;
+} McAFLLScpType;
+
+typedef struct McAFLLLocSecType
+{	struct McCfgReferenceType SectorReference;
+} McAFLLLocSecType;
+
+typedef struct McAFLLLocCrvAreaType
+{	float CurvatureThreshold;
+} McAFLLLocCrvAreaType;
+
+typedef struct McAFLLLocType
+{	enum McAFLLLocEnum Type;
+	struct McAFLLLocSecType Sector;
+	struct McAFLLLocCrvAreaType CurvedArea;
+} McAFLLLocType;
+
+typedef struct McAFLLMotLimVelBasicType
+{	float Velocity;
+} McAFLLMotLimVelBasicType;
+
+typedef struct McAFLLMotLimVelType
+{	enum McAFLLMotLimVelEnum Type;
+	struct McAFLLMotLimVelBasicType Basic;
+} McAFLLMotLimVelType;
+
+typedef struct McAFLLMotLimAccBasicType
+{	float Acceleration;
+} McAFLLMotLimAccBasicType;
+
+typedef struct McAFLLMotLimAccType
+{	enum McAFLLMotLimAccEnum Type;
+	struct McAFLLMotLimAccBasicType Basic;
+} McAFLLMotLimAccType;
+
+typedef struct McAFLLMotLimType
+{	struct McAFLLMotLimVelType Velocity;
+	struct McAFLLMotLimAccType Acceleration;
+} McAFLLMotLimType;
+
+typedef struct McAFLLType
+{	struct McAFLLScpType Scope;
+	struct McAFLLLocType Location;
+	struct McAFLLMotLimType MotionLimits;
+} McAFLLType;
+
+typedef struct McCfgAsmFeatLocLimType
+{	struct McCfgUnboundedArrayType LocalLimit;
+} McCfgAsmFeatLocLimType;
 
 typedef struct McSCSegType
 {	plcstring SegmentReference[251];
@@ -593,6 +784,25 @@ typedef struct MC_BR_AsmGetInfo_AcpTrak
 	plcbit Busy;
 	plcbit Error;
 } MC_BR_AsmGetInfo_AcpTrak_typ;
+
+typedef struct MC_BR_AsmGetMinShDist_AcpTrak
+{
+	/* VAR_INPUT (analog) */
+	struct McAssemblyType* Assembly;
+	enum McAcpTrakShRelativeAlignmentEnum Mode;
+	struct McAcpTrakAdvGetMinShDistParType AdvancedParameters;
+	/* VAR_OUTPUT (analog) */
+	signed long ErrorID;
+	struct McAcpTrakAsmGetMinShDistType Distance;
+	/* VAR (analog) */
+	struct McInternalType Internal;
+	/* VAR_INPUT (digital) */
+	plcbit Execute;
+	/* VAR_OUTPUT (digital) */
+	plcbit Done;
+	plcbit Busy;
+	plcbit Error;
+} MC_BR_AsmGetMinShDist_AcpTrak_typ;
 
 typedef struct MC_BR_BarrierCommand_AcpTrak
 {
@@ -1099,6 +1309,24 @@ typedef struct MC_BR_ShCouplingObjCmd_AcpTrak
 	plcbit Error;
 } MC_BR_ShCouplingObjCmd_AcpTrak_typ;
 
+typedef struct MC_BR_ShLocalLimitCmd_AcpTrak
+{
+	/* VAR_INPUT (analog) */
+	struct McAxisType* Axis;
+	enum McAcpTrakShLocalLimitCmdEnum Command;
+	plcstring LocalLimitName[33];
+	/* VAR_OUTPUT (analog) */
+	signed long ErrorID;
+	/* VAR (analog) */
+	struct McInternalType Internal;
+	/* VAR_INPUT (digital) */
+	plcbit Execute;
+	/* VAR_OUTPUT (digital) */
+	plcbit Done;
+	plcbit Busy;
+	plcbit Error;
+} MC_BR_ShLocalLimitCmd_AcpTrak_typ;
+
 
 
 /* Prototyping of functions and function blocks */
@@ -1112,6 +1340,7 @@ _BUR_PUBLIC void MC_BR_AsmGetShuttle_AcpTrak(struct MC_BR_AsmGetShuttle_AcpTrak*
 _BUR_PUBLIC void MC_BR_AsmDeleteShuttle_AcpTrak(struct MC_BR_AsmDeleteShuttle_AcpTrak* inst);
 _BUR_PUBLIC void MC_BR_AsmReadInfo_AcpTrak(struct MC_BR_AsmReadInfo_AcpTrak* inst);
 _BUR_PUBLIC void MC_BR_AsmGetInfo_AcpTrak(struct MC_BR_AsmGetInfo_AcpTrak* inst);
+_BUR_PUBLIC void MC_BR_AsmGetMinShDist_AcpTrak(struct MC_BR_AsmGetMinShDist_AcpTrak* inst);
 _BUR_PUBLIC void MC_BR_BarrierCommand_AcpTrak(struct MC_BR_BarrierCommand_AcpTrak* inst);
 _BUR_PUBLIC void MC_BR_BarrierReadInfo_AcpTrak(struct MC_BR_BarrierReadInfo_AcpTrak* inst);
 _BUR_PUBLIC void MC_BR_TrgPointGetInfo_AcpTrak(struct MC_BR_TrgPointGetInfo_AcpTrak* inst);
@@ -1138,6 +1367,7 @@ _BUR_PUBLIC void MC_BR_ShSelCtrlParSet_AcpTrak(struct MC_BR_ShSelCtrlParSet_AcpT
 _BUR_PUBLIC void MC_BR_ShResize_AcpTrak(struct MC_BR_ShResize_AcpTrak* inst);
 _BUR_PUBLIC void MC_BR_ElasticMoveCycPos_AcpTrak(struct MC_BR_ElasticMoveCycPos_AcpTrak* inst);
 _BUR_PUBLIC void MC_BR_ShCouplingObjCmd_AcpTrak(struct MC_BR_ShCouplingObjCmd_AcpTrak* inst);
+_BUR_PUBLIC void MC_BR_ShLocalLimitCmd_AcpTrak(struct MC_BR_ShLocalLimitCmd_AcpTrak* inst);
 _BUR_PUBLIC unsigned short LLMInit(signed long sysInitPhase);
 
 

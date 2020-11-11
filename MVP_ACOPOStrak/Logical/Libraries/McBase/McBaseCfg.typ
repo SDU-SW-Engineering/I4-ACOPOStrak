@@ -28,6 +28,7 @@ TYPE
 		mcCFG_ACP_DIG_IN := 11019, (*Associated with data type McCfgAcpDigInType*)
 		mcCFG_ACP_SIM := 11020, (*Associated with data type McCfgAcpSimType*)
 		mcCFG_ACP_AX_FEAT := 11021, (*Associated with data type McCfgAcpAxFeatType*)
+		mcCFG_ACP_AUX_PWR_SUP_MOD := 11030, (*Associated with data type McCfgAcpAuxPwrSupModType*)
 		mcCFG_AX_FEAT_CAM_AUT_ACP := 11101, (*AxisFeatureCamAutAcopos -*)
 		mcCFG_AX_FEAT_CAM_LST := 11102, (*AxisFeatureCamList -*)
 		mcCFG_AX_FEAT_A_IN := 11103, (*AxisFeatureAInput -*)
@@ -73,9 +74,13 @@ TYPE
 		mcCFG_AXGRP_FEAT_2D_COMP := 21120, (*Associated with data type McCfgAxGrpFeat2DCompType*)
 		mcCFG_AXGRP_FEAT_3D_COMP := 21121, (*Associated with data type McCfgAxGrpFeat3DCompType*)
 		mcCFG_AXGRP_FEAT_PATH_PREVIEW := 21122, (*Associated with data type McCfgAxGrpFeatPathPreviewType*)
-		mcCFG_AXGRP_FEAT_DYN_MDL_IDENT := 21123, (*Associated with data type McCfgAxGrpFeatDynMdlIdentType*)
 		mcCFG_AXGRP_FEAT_TAN_TOOL := 21124, (*Associated with data type McCfgAxGrpFeatTanToolType*)
 		mcCFG_AXGRP_FEAT_REV_MOVE := 21125, (*Associated with data type McCfgAxGrpFeatRevMoveType*)
+		mcCFG_ASM_FEAT_CPLG := 31101, (*Associated with data type McCfgAsmFeatCplgType*)
+		mcCFG_ASM_FEAT_SIM_SH_DEF := 31102, (*Associated with data type McCfgAsmFeatSimShDefType*)
+		mcCFG_ASM_FEAT_SH_TRACE := 31103, (*Associated with data type McCfgAsmFeatShTraceType*)
+		mcCFG_ASM_FEAT_SH_AUT_ATT := 31104, (*Associated with data type McCfgAsmFeatShAutAttType*)
+		mcCFG_ASM_FEAT_LOC_LIM := 31105, (*Associated with data type McCfgAsmFeatLocLimType*)
 		mcCFG_SEC_COMP := 31301, (*Associated with data type McCfgSecCompType*)
 		mcCFG_SEC_SUB := 31302, (*Associated with data type McCfgSecSubType*)
 		mcCFG_MS_CUS_STD := 50001, (*Associated with data type McCfgMSCusStdType*)
@@ -84,6 +89,7 @@ TYPE
 		mcCFG_MS_2AX_CNC_YZ := 51203, (*Associated with data type McCfgMS2AxCncYZType*)
 		mcCFG_MS_3AX_CNC_XYZ := 51301, (*Associated with data type McCfgMS3AxCncXYZType*)
 		mcCFG_MS_3AX_CNC_XZC := 51302, (*Associated with data type McCfgMS3AxCncXZCType*)
+		mcCFG_MS_3AX_CNC_XZB := 51303, (*Associated with data type McCfgMS3AxCncXZBType*)
 		mcCFG_MS_4AX_CNC_XYZB := 51401, (*Associated with data type McCfgMS4AxCncXYZBType*)
 		mcCFG_MS_4AX_CNC_XYZC := 51402, (*Associated with data type McCfgMS4AxCncXYZCType*)
 		mcCFG_MS_5AX_CNC_XYZCA := 51504, (*Associated with data type McCfgMS5AxCncXYZCAType*)
@@ -435,11 +441,11 @@ TYPE
 	McCfgTransZType : STRUCT (*Translation from QX to QZ*)
 		Z : LREAL; (*Translation in Z direction [measurement units]*)
 	END_STRUCT;
-	McCfgTransYType : STRUCT (*Translation from QX to QY*)
-		Y : LREAL; (*Translation in Y direction [measurement units]*)
-	END_STRUCT;
-	McCfgTransXZType : STRUCT (*Center of the base platform*)
+	McCfgTransXZType : STRUCT (*Translation from QZ to QB*)
 		X : LREAL; (*Translation in X direction [measurement units]*)
 		Z : LREAL; (*Translation in Z direction [measurement units]*)
+	END_STRUCT;
+	McCfgTransYType : STRUCT (*Translation from QX to QY*)
+		Y : LREAL; (*Translation in Y direction [measurement units]*)
 	END_STRUCT;
 END_TYPE

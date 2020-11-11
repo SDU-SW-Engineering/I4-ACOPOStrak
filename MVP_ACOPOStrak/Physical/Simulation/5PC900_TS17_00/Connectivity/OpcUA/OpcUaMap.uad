@@ -64,6 +64,7 @@
         <Variable Name="HMI_Start" />
         <Variable Name="HMI_stop" />
         <Variable Name="Status" />
+        <Variable Name="CntShuttle" />
       </Task>
       <Task Name="PB1">
         <Variable Name="HMI_Barrier_Close" />
@@ -101,6 +102,7 @@
         <Variable Name="Shuttle5_Angel" />
         <Variable Name="Shuttle5_X" />
         <Variable Name="Shuttle5_Y" />
+        <Variable Name="Vis" />
       </Task>
     </Module>
   </DefaultView>

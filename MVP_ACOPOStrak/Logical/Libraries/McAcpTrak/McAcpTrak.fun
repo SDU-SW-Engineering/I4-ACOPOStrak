@@ -166,6 +166,25 @@ FUNCTION_BLOCK  MC_BR_AsmGetInfo_AcpTrak (*Get information of the assembly.*)
 	END_VAR
 END_FUNCTION_BLOCK
 
+FUNCTION_BLOCK  MC_BR_AsmGetMinShDist_AcpTrak (*Output minimum possible distance between shuttles*)
+	VAR_INPUT
+		Assembly : REFERENCE TO McAssemblyType; (*The assembly reference establishes the connection between the function block and the assembly.*)
+		Execute : BOOL;  (*Execution of the function block begins on a rising edge of this input.*)
+		Mode :   McAcpTrakShRelativeAlignmentEnum; (*Calculation mode selector*)
+		AdvancedParameters :  McAcpTrakAdvGetMinShDistParType; (*Advanced parameters for distance calculation*)
+	END_VAR
+	VAR_OUTPUT
+		Done : BOOL; (*Function block is finished*)
+		Busy : BOOL; (*Function block is active and must continue to be called.*)
+		Error : BOOL; (*error occurred during operation*)
+		ErrorID : DINT; (*Error number*)
+		Distance : McAcpTrakAsmGetMinShDistType; (*Calculated minimum distance between shuttles*)
+	END_VAR
+	VAR
+		Internal : McInternalType;
+	END_VAR
+END_FUNCTION_BLOCK
+
 FUNCTION_BLOCK MC_BR_BarrierCommand_AcpTrak (*Open or close a barrier*)
 	VAR_INPUT
 		ProcessPoint : REFERENCE TO McProcessPointType; (*The ProcessPoint reference establishes the connection between the function block and the trigger point.*)
@@ -671,3 +690,22 @@ FUNCTION_BLOCK MC_BR_ShCouplingObjCmd_AcpTrak (*set a coupling object for a shut
 		Internal : McInternalType;
 	END_VAR
 END_FUNCTION_BLOCK
+
+FUNCTION_BLOCK MC_BR_ShLocalLimitCmd_AcpTrak (*add/remove a shuttle to a local limit*)
+	VAR_INPUT
+		Axis : REFERENCE TO McAxisType; (*the shuttle reference establishes the connection between the function block and the shuttle.*)
+		Execute: BOOL; (*execution of this FB started on a rising edge of the input*)
+		Command:  McAcpTrakShLocalLimitCmdEnum; (*command that should be executed*)
+		LocalLimitName: STRING[32]; (*Name of the used local limit object*)
+	END_VAR
+	VAR_OUTPUT
+		Done : BOOL; (*Function block is finished*)
+		Busy : BOOL; (*Function block is active and must continue to be called.*)
+		Error : BOOL; (*error occurred during operation*)
+		ErrorID : DINT; (*Error number*)
+	END_VAR
+	VAR
+		Internal : McInternalType;
+	END_VAR
+END_FUNCTION_BLOCK
+
