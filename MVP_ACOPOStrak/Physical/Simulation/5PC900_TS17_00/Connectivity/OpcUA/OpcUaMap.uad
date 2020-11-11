@@ -85,6 +85,23 @@
       <Task Name="Receip_Han">
         <Variable Name="brestart" />
       </Task>
+      <Task Name="Vis">
+        <Variable Name="Shuttle1_X" />
+        <Variable Name="Shuttle1_Y" />
+        <Variable Name="Shuttle1_Angel" />
+        <Variable Name="Shuttle2_Angel" />
+        <Variable Name="Shuttle2_X" />
+        <Variable Name="Shuttle2_Y" />
+        <Variable Name="Shuttle3_Angel" />
+        <Variable Name="Shuttle3_X" />
+        <Variable Name="Shuttle3_Y" />
+        <Variable Name="Shuttle4_Angel" />
+        <Variable Name="Shuttle4_X" />
+        <Variable Name="Shuttle4_Y" />
+        <Variable Name="Shuttle5_Angel" />
+        <Variable Name="Shuttle5_X" />
+        <Variable Name="Shuttle5_Y" />
+      </Task>
     </Module>
   </DefaultView>
 </OpcUaSource>

@@ -4,4 +4,19 @@ VAR
 	NumVisShuttle : USINT := 0;
 	i : USINT := 0;
 	pUserData : REFERENCE TO ShuttleUserData_typ;
+	Shuttle1_Angel : REAL;
+	Shuttle1_Y : REAL;
+	Shuttle1_X : REAL;
+	Shuttle2_X : REAL;
+	Shuttle3_X : REAL;
+	Shuttle4_X : REAL;
+	Shuttle5_X : REAL;
+	Shuttle2_Y : REAL;
+	Shuttle3_Y : REAL;
+	Shuttle4_Y : REAL;
+	Shuttle5_Y : REAL;
+	Shuttle2_Angel : REAL;
+	Shuttle3_Angel : REAL;
+	Shuttle4_Angel : REAL;
+	Shuttle5_Angel : REAL;
 END_VAR

@@ -30,7 +30,7 @@ in step machine *)
 			(* The userdata is copied on a local variable *)
 			MC_BR_ShCopyUserData_AcpTrak_0.Axis := ADR(ShuttleAxis);
 			MC_BR_ShCopyUserData_AcpTrak_0.Execute := TRUE;
-			MC_BR_ShCopyUserData_AcpTrak_0.DataAddress := ADR(ShuttleUserData);imean
+			MC_BR_ShCopyUserData_AcpTrak_0.DataAddress := ADR(ShuttleUserData);
 			MC_BR_ShCopyUserData_AcpTrak_0.DataSize := SIZEOF(ShuttleUserData);
 			MC_BR_ShCopyUserData_AcpTrak_0.Mode := mcACPTRAK_USERDATA_GET;
 					(* After copying go to the next step *)

@@ -2,7 +2,7 @@
 <BR.AS.HardwareTopology Version="0.0.0.1">
   <TimeStamps>
     <TimeStamp LogicalPath="ACOPOStrak.Hardware.hw" LastWriteTime="08/06/2020 13:02:38" />
-    <TimeStamp LogicalPath="ACOPOStrak.CPU.hw" LastWriteTime="09/01/2020 14:59:36" />
+    <TimeStamp LogicalPath="ACOPOStrak.CPU.hw" LastWriteTime="09/11/2020 13:53:08" />
   </TimeStamps>
   <Modules>
     <Module Name="5PC910.SX02-00" Type="5PC910.SX02-00" X="426" Y="610" />
