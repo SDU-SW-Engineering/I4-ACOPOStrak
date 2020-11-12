@@ -489,4 +489,3 @@ FUNCTION_BLOCK MC_BR_RdLoadSimInputData_AcpAx (* This function block provides th
 		Internal : McInternalType; (*internal variable*)
 	END_VAR
 END_FUNCTION_BLOCK
-

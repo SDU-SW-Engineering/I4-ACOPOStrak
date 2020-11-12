@@ -85,17 +85,14 @@ TYPE
 
 	McAcpTrakShManeuverReasonEnum:
 	(
-		mcACPTRAK_REASON_UNSPECIFIED := 0,		(*unspecified reason*)
-		mcACPTRAK_REASON_SHUTTLE := 1,			(*maneuver due to another shuttle*)
-		mcACPTRAK_REASON_LOCAL_VEL_LIMIT := 2,	(*maneuver due to an active local velocity limit*)
-		mcACPTRAK_REASON_BARRIER := 3,			(*maneuver due to a closed barrier*)
-		mcACPTRAK_REASON_SECTOREND := 4,		(*maneuver due to a closed sector end*)
-		mcACPTRAK_REASON_SECTORSWITCH := 5,		(*maneuver due to an invalid sector switch*)
-		mcACPTRAK_REASON_LOGISTICS := 6,		(*maneuver due to motion parameters of logistics*)
-		mcACPTRAK_REASON_NONE := 7,				(*normal behaviour*)
-		mcACPTRAK_REASON_LOCAL_ACC_LIMIT := 8,	(*maneuver due to an acceleration limit*)
-		mcACPTRAK_REASON_UNCONTROLLED := 9,		(*maneuver due to transition from controlled to uncontrolled*)
-		mcACPTRAK_REASON_RECONTROLLED := 10		(*maneuver due to transition from uncontrolled to controlled*)
+		mcACPTRAK_REASON_NONE := 7,			(*normal behaviour*)
+		mcACPTRAK_REASON_SHUTTLE := 1,		(*shuttle*)
+		mcACPTRAK_REASON_BARRIER := 3,		(*closed barrier*)
+		mcACPTRAK_REASON_LOCAL_VEL_LIMIT := 2, (*local velocity limit activ*)
+		mcACPTRAK_REASON_UNSPECIFIED := 0,	(*unspecified reason*)
+		mcACPTRAK_REASON_SECTORSWITCH := 5,	(*sector switch*)
+		mcACPTRAK_REASON_LOGISTICS := 6,	(*logistics reason*)
+		mcACPTRAK_REASON_SECTOREND := 4		(*sector end reached*)
 	);
 
 	McAcpTrakSelectShSideEnum:
@@ -160,7 +157,7 @@ TYPE
 	 	mcACPTRAK_SH_DELETE_SPECIFIC,	(* Delete only one specific shuttle which is given at the input "Shuttle" *)
 	 	mcACPTRAK_SH_DELETE_ALL			(* Delete all shuttles of the given assembly *)
 	 );
-
+	 
 	McAcpTrakPLCopenStateEnum :
 	(
 		mcACPTRAK_DISABLED,
@@ -170,28 +167,6 @@ TYPE
 		mcACPTRAK_ERRORSTOP,
 		mcACPTRAK_STARTUP,
 		mcACPTRAK_INVALID_CONFIGURATION
-	);
-
-	 McAcpTrakShRelativeAlignmentEnum :
-	(
-		mcACPTRAK_ALIGNED_FRONT_TO_BACK,
-		mcACPTRAK_ALIGNED_BACK_TO_FRONT,
-		mcACPTRAK_ALIGNED_FRONT_TO_FRONT,
-		mcACPTRAK_ALIGNED_BACK_TO_BACK
-	);
-
-	 McAcpTrakShRelativeRefPointEnum :
-	 (
-	 	mcACPTRAK_DIST_CENTER_TO_CENTER,
-		mcACPTRAK_DIST_CENTER_TO_EXTENT,
-		mcACPTRAK_DIST_EXTENT_TO_CENTER,
-		mcACPTRAK_DIST_EXTENT_TO_EXTENT
-	 );
-
-	 McAcpTrakShLocalLimitCmdEnum :
-	(
-		mcACPTRAK_LL_ADD_SHUTTLE,
-		mcACPTRAK_LL_REMOVE_SHUTTLE
 	);
 
 	McAcpTrakRouteTransitPointsType : STRUCT
@@ -318,7 +293,6 @@ TYPE
 	McAcpTrakTrgPointGetInfoType : STRUCT
 		Axis : McAxisType; (*determined axis reference*)
 		Event : McAcpTrakTrgPointEventEnum; (*direction the shuttle passed*)
-		ShuttleControlled : BOOL; (*shuttle status when passing - controlled/uncontrolled*)
 	END_STRUCT;
 
 	McAcpTrakBarrierInfoType : STRUCT
@@ -378,18 +352,6 @@ TYPE
 		ShuttleID : UINT; (* Unique shuttle index on the assembly.*)
 		Position : LREAL; (* Position on sector*)
 		Orientation : McDirectionEnum; (* Orientation of the shuttle on the sector*)
-	END_STRUCT;
-
-	McAcpTrakAdvGetMinShDistParType : STRUCT
-	 	MeasurePointsMode : McAcpTrakShRelativeRefPointEnum; (*Measurement points selector*)
-		Shuttle1 : REFERENCE TO McAxisType; (*Reference of the first shuttle in the comparison(optional)*)
-		Shuttle2 : REFERENCE TO McAxisType; (*Reference of the second shuttle in the comparison(optional)*)
-	END_STRUCT;
-
-	McAcpTrakAsmGetMinShDistType : STRUCT
-		Curve : LREAL; (* Minimum distance on a curved segment*)
-		Junction : LREAL; (* Minimum distance in a junction*)
-		Straight : LREAL; (* Minimum distance on a straight*)
 	END_STRUCT;
 
 END_TYPE

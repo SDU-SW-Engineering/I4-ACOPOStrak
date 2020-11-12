@@ -94,19 +94,6 @@ TYPE
 		mcCAMSECTLAW_HARMONIC_COMBI := 8
 	);
 
-	McEventSrcEnum :
-	(
-		mcEVENT_SRC_TRIGGER1 := 0,	(*Use Trigger 1 as an event source*)
-		mcEVENT_SRC_TRIGGER2 := 1	(*Use Trigger 2 as an event source*)
-	);
-
-	McBrTriggerInfoStatusEnum :
-	(
-		mcTRG_STAT_WAITING := 0, (*Waiting for trigger event.*)
-		mcTRG_STAT_VALID := 1, (*A valid trigger event was detected.*)
-		mcTRG_STAT_MISSED := 2 (*No valid trigger event was detected in period.*)
-	);
-
 	(*Structure types*)
 
 	McLibraryInfoType : STRUCT
@@ -131,9 +118,9 @@ TYPE
 	END_STRUCT;
 
 	McAdvVelCtrlParType : STRUCT
-		Acceleration : REAL; (*Maximum acceleration [Measurement units/sï¿½]*)
-		Deceleration : REAL; (*Maximum deceleration [Measurement units/sï¿½]*)
-		Jerk : REAL; (*Maximum jerk [measurement units / sï¿½]*)
+		Acceleration : REAL; (*Maximum acceleration [Measurement units/s²]*)
+		Deceleration : REAL; (*Maximum deceleration [Measurement units/s²]*)
+		Jerk : REAL; (*Maximum jerk [measurement units / s³]*)
 	END_STRUCT;
 
 	McShiftModeEnum:
@@ -182,10 +169,6 @@ TYPE
 	END_STRUCT;
 
 	McAdvGearInParType : STRUCT
-		MasterMaxVelocity : REAL; (*Maximum velocity of the master axis [measurement units of master / s]*)
-	END_STRUCT;
-
-	McAdvGearInPosParType : STRUCT
 		MasterMaxVelocity : REAL; (*Maximum velocity of the master axis [measurement units of master / s]*)
 	END_STRUCT;
 
@@ -371,8 +354,8 @@ TYPE
 	    MaxSlaveCompDistance : LREAL; (*Maximum compensation distance for the slave axis [slave measurement unit]*)
 	    MinSlaveCompVelocity : REAL; (*Minimum velocity of the slave axis during compensation [measurement units of slave / s]*)
 	    MaxSlaveCompVelocity : REAL; (*Maximum velocity of the slave axis during compensation [measurement units of slave / s]*)
-	    MaxSlaveCompAccel1 : REAL; (*Maximum acceleration of the slave axis during compensation phase 1 [measurement units of slave / sï¿½]*)
-	    MaxSlaveCompAccel2 : REAL; (*Maximum acceleration of the slave axis during compensation phase 2 [measurement units of slave / sï¿½]*)
+	    MaxSlaveCompAccel1 : REAL; (*Maximum acceleration of the slave axis during compensation phase 1 [measurement units of slave / s²]*)
+	    MaxSlaveCompAccel2 : REAL; (*Maximum acceleration of the slave axis during compensation phase 2 [measurement units of slave / s²]*)
 	    SlaveCompJoltTime : REAL; (*Jerk time of the slave axis during compensation [s]*)
 	END_STRUCT;
 
@@ -529,5 +512,6 @@ TYPE
 		MasterMaxVelocity : REAL; (*Maximum velocity of the master axis [measurement units of master/s]*)
 		Jerk : REAL; (**)
 	END_STRUCT;
+
 
 END_TYPE
