@@ -95,7 +95,8 @@ in step machine *)
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection := mcDIR_POSITIVE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_POSITIVE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection := mcDIR_NEGATIVE;
-				
+
+							
 					IF EDGEPOS (MC_BR_RoutedMoveAbs_AcpTrak_0.Done) THEN
 							MC_BR_RoutedMoveAbs_AcpTrak_0.Execute := FALSE;
 							LoadOffTrack := FALSE;

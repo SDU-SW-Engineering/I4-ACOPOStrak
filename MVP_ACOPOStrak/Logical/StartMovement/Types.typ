@@ -11,4 +11,11 @@ TYPE
 		STOPPING,
 		RESET
 		);
+	SubStepEnum : 
+		(
+		GetShuttles,
+		Userdata_Set,
+		Userdata_Get,
+		Reset_Process
+		);
 END_TYPE

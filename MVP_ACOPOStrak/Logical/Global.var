@@ -41,6 +41,7 @@ VAR
 	WaitingBarrier : BOOL;
 	WaitingLoadOff : BOOL;
 	WaitingLoadOn : BOOL;
+	Reset : BOOL;
 	WaitingCell1 : BOOL;
 	WaitingCell2 : BOOL;
 END_VAR

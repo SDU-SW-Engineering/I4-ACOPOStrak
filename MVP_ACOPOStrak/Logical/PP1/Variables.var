@@ -12,4 +12,5 @@ VAR
 	TaskReady : BOOL;
 	TON_0 : TON;
 	ShuttleUserData : ShuttleUserData_typ;
+	MC_BR_RoutedMoveVel_AcpTrak_0 : MC_BR_RoutedMoveVel_AcpTrak;
 END_VAR

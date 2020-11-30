@@ -47,6 +47,7 @@
         <Variable Name="NeedPartCell2" />
         <Variable Name="EmptyFixtureCell1" />
         <Variable Name="EmptyFixtureCell2" />
+        <Variable Name="Reset" />
       </GlobalVariables>
       <Task Name="StartMovem">
         <Variable Name="MC_BR_AsmPowerOn_AcpTrak_0">

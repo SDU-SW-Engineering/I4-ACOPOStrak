@@ -63,7 +63,25 @@ in step machine *)
 				Step := SET_USERDATA;
 				END_IF
 			ELSE
-				Step := SET_USERDATA;
+				
+				MC_BR_RoutedMoveVel_AcpTrak_0.Axis := ADR(ShuttleAxis);
+				MC_BR_RoutedMoveVel_AcpTrak_0.Execute := TRUE;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Sector := ADR(SectorTrack1);
+				MC_BR_RoutedMoveVel_AcpTrak_0.Position := 5;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Velocity := Speed_PP_04;
+				MC_BR_RoutedMoveVel_AcpTrak_0.RouteVelocity := Speed_PP_04;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Acceleration := 10;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Deceleration := 10;
+				MC_BR_RoutedMoveVel_AcpTrak_0.Jerk := 0.0;
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection := mcDIR_POSITIVE;
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
+				MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection := mcDIR_UNDEFINED;	
+				
+				
+				IF EDGEPOS (MC_BR_RoutedMoveVel_AcpTrak_0.Active) THEN
+					MC_BR_RoutedMoveVel_AcpTrak_0.Execute := FALSE;
+					Step := SET_USERDATA;
+				END_IF
 		END_IF		
 				
 	

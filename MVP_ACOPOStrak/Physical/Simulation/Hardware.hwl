@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <BR.AS.HardwareTopology Version="0.0.0.1">
   <TimeStamps>
-    <TimeStamp LogicalPath="ACOPOStrak.Hardware.hw" LastWriteTime="08/06/2020 13:02:38" />
-    <TimeStamp LogicalPath="ACOPOStrak.CPU.hw" LastWriteTime="09/11/2020 13:53:08" />
+    <TimeStamp LogicalPath="Simulation.CPU.hw" LastWriteTime="11/24/2020 15:01:17" />
+    <TimeStamp LogicalPath="Simulation.Hardware.hw" LastWriteTime="08/06/2020 13:02:38" />
   </TimeStamps>
   <Modules>
     <Module Name="5PC910.SX02-00" Type="5PC910.SX02-00" X="426" Y="610" />
@@ -107,6 +107,28 @@
     <Module Name="epl_icn" Type="epl_icn" X="2482" Y="548" />
   </Modules>
   <Links>
+    <Link From="5LS182.6-2" To="X20BC8083" FromPort="IF1" ToPort="PLK1" IsRoutedByUser="False">
+      <Point X="639.1566" Y="725" />
+      <Point X="630.9066" Y="725" />
+      <Point X="630.9066" Y="750" />
+      <Point X="630.9066" Y="769" />
+      <Point X="565" Y="769" />
+      <Point X="565" Y="664" />
+      <Point X="540.5022" Y="664" />
+      <Point X="531.5022" Y="664" />
+      <Point X="531.5022" Y="664" />
+    </Link>
+    <Link From="5LS182.6-2" To="X20BC8083a" FromPort="PLK2" ToPort="PLK1" IsRoutedByUser="True">
+      <Point X="794.1566" Y="725" />
+      <Point X="785.9066" Y="725" />
+      <Point X="785.9066" Y="750" />
+      <Point X="785.9066" Y="762" />
+      <Point X="551" Y="762" />
+      <Point X="551" Y="676" />
+      <Point X="540.5022" Y="676" />
+      <Point X="531.5022" Y="676" />
+      <Point X="531.5022" Y="676" />
+    </Link>
     <Link From="80PS080X3.10-01" To="X20BT9400a" FromPort="X2X1" ToPort="X2X1" IsRoutedByUser="False">
       <Point X="1010" Y="613" />
       <Point X="1010" Y="613" />
@@ -905,28 +927,6 @@
       <Point X="1345.5" Y="1281.5" />
       <Point X="1345.5" Y="1320.5" />
       <Point X="1345.5" Y="1320.5" />
-    </Link>
-    <Link From="X20BC8083" To="5LS182.6-2" FromPort="PLK1" ToPort="IF1" IsRoutedByUser="False">
-      <Point X="639.1566" Y="725" />
-      <Point X="630.9066" Y="725" />
-      <Point X="630.9066" Y="750" />
-      <Point X="630.9066" Y="769" />
-      <Point X="565" Y="769" />
-      <Point X="565" Y="664" />
-      <Point X="540.5022" Y="664" />
-      <Point X="531.5022" Y="664" />
-      <Point X="531.5022" Y="664" />
-    </Link>
-    <Link From="X20BC8083a" To="5LS182.6-2" FromPort="PLK1" ToPort="PLK2" IsRoutedByUser="True">
-      <Point X="794.1566" Y="725" />
-      <Point X="785.9066" Y="725" />
-      <Point X="785.9066" Y="750" />
-      <Point X="785.9066" Y="762" />
-      <Point X="551" Y="762" />
-      <Point X="551" Y="676" />
-      <Point X="540.5022" Y="676" />
-      <Point X="531.5022" Y="676" />
-      <Point X="531.5022" Y="676" />
     </Link>
   </Links>
   <InfoElements>

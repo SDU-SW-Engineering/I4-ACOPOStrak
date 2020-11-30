@@ -21,7 +21,7 @@ PROGRAM _INIT
     
 	(* Enable reading of current status of the assembly *)
 	MC_BR_AsmReadStatus_AcpTrak_0.Enable := TRUE;
-    
+    CntReset := 1; 
 END_PROGRAM
 
 PROGRAM _CYCLIC
@@ -111,6 +111,7 @@ PROGRAM _CYCLIC
 			ELSIF (gTrakAsm.Command.ShuttleStart) THEN   (*Waiting for Movement command*)
 				gTrakAsm.Command.ShuttleStart := FALSE;
 				CntShuttle := 1;
+				CntReset := 1;
 				Step := PROCESS;
 			END_IF
     
@@ -138,9 +139,85 @@ PROGRAM _CYCLIC
 					MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection       := mcDIR_POSITIVE;
 					MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_UNDEFINED;
 				END_IF
-			END_IF
+			 END_IF 
+				
 			
-			
+			CASE SubStep OF
+				GetShuttles:
+					IF EDGEPOS (Reset) THEN 
+					
+						IF WaitingCell1 THEN
+							TaskCompleteCell1 := TRUE;
+						END_IF
+						IF WaitingCell2 THEN
+							TaskCompleteCell2 := TRUE;
+						END_IF
+						IF WaitingLoadOn THEN
+							LoadOnTrack := TRUE;
+						END_IF
+						IF WaitingLoadOff THEN
+							LoadOffTrack := TRUE;
+						END_IF 
+						MC_BR_AsmGetShuttle_AcpTrak_0.Enable := TRUE;
+					END_IF	
+					
+					IF (MC_BR_AsmGetShuttle_AcpTrak_0.Valid) THEN
+						IF (MC_BR_AsmGetShuttle_AcpTrak_0.RemainingCount <> 0) AND MC_BR_AsmGetShuttle_AcpTrak_0.Next THEN
+								MC_BR_AsmGetShuttle_AcpTrak_0.Next := FALSE;
+							ELSE
+								ShuttleAxis[CntReset] := MC_BR_AsmGetShuttle_AcpTrak_0.Axis;    (*Save all Axis References to an array for global movement commands*)
+								MC_BR_AsmGetShuttle_AcpTrak_0.Next := TRUE;   (*Get next Shuttle reference with positive Edge on .next*)
+								CntReset := CntReset+1;
+								SubStep := Userdata_Get;
+								IF (MC_BR_AsmGetShuttle_AcpTrak_0.RemainingCount = 0) THEN
+									MC_BR_AsmGetShuttle_AcpTrak_0.Enable := FALSE;
+									MC_BR_AsmGetShuttle_AcpTrak_0.Next := FALSE;
+									CntReset := 1; 
+									Reset := FALSE;
+								END_IF
+							END_IF
+					END_IF	
+						
+						
+					Userdata_Get:
+						(* The userdata is copied on a local variable *)
+						MC_BR_ShCopyUserData_AcpTrak_0.Axis := ADR(ShuttleAxis[CntReset]);
+						MC_BR_ShCopyUserData_AcpTrak_0.Execute := TRUE;
+						MC_BR_ShCopyUserData_AcpTrak_0.DataAddress := ADR(ShuttleUserData);
+						MC_BR_ShCopyUserData_AcpTrak_0.DataSize := SIZEOF(ShuttleUserData);
+						MC_BR_ShCopyUserData_AcpTrak_0.Mode := mcACPTRAK_USERDATA_GET;
+						(* After copying go to the next step *)
+					
+						IF EDGEPOS(MC_BR_ShCopyUserData_AcpTrak_0.Done) THEN
+							MC_BR_ShCopyUserData_AcpTrak_0.Execute := FALSE;
+							SubStep := Reset_Process;
+						END_IF
+						
+					Reset_Process:	
+						
+					ShuttleUserData.Task := NoTask;
+						SubStep := Userdata_Set;
+						
+						Userdata_Set:
+							(* The modified userdata will be copied back on the shuttle *)
+							MC_BR_ShCopyUserData_AcpTrak_0.Axis := ADR(ShuttleAxis[CntReset]);
+							MC_BR_ShCopyUserData_AcpTrak_0.Execute := TRUE;
+							MC_BR_ShCopyUserData_AcpTrak_0.DataAddress := ADR(ShuttleUserData);
+							MC_BR_ShCopyUserData_AcpTrak_0.DataSize := SIZEOF(ShuttleUserData);
+							MC_BR_ShCopyUserData_AcpTrak_0.Mode := mcACPTRAK_USERDATA_SET;
+
+							(* After copying go to the first step and wait for new event *)
+							IF EDGEPOS(MC_BR_ShCopyUserData_AcpTrak_0.Done) THEN
+								MC_BR_ShCopyUserData_AcpTrak_0.Execute := FALSE;
+								SubStep := GetShuttles;
+								
+								
+							END_IF
+					END_CASE
+		
+					
+				
+			 	
 			
 			IF PowerOffTrack2 THEN
 				
@@ -222,7 +299,7 @@ PROGRAM _CYCLIC
 				MC_BR_AsmReset_AcpTrak_0.Execute := TRUE;
 				Step := RESET;
 			END_IF
-        
+       
 			(*        Stop all Shuttles with specified Deceleration at their current location        *)
 		STOPPING:
 			Status := 'Stopping';
@@ -294,7 +371,7 @@ PROGRAM _CYCLIC
 	MC_BR_SegPowerOn_AcpTrak_7();
 	MC_BR_SegPowerOn_AcpTrak_8();
 	MC_BR_SegPowerOn_AcpTrak_9();
-	
+	MC_BR_ShCopyUserData_AcpTrak_0();
 	
 	IF EmptyFixtureCell1 = 1 AND EmptyFixtureCell2 = 1 AND NeedPartCell1 = 1 AND NeedPartCell2 = 1 AND MoveAssemblyPart = 1 AND TaskCompleteCell1 AND TaskCompleteCell2 AND LoadOnTrack AND LoadOffTrack THEN
 		Ok := TRUE;

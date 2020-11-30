@@ -57,5 +57,11 @@
       <Property ID="TriggerEventBufferSize" Value="10" />
       <Selector ID="BarrierFunctionality" Value="Off" />
     </Selector>
+    <Selector ID="ProcessPoint[8]">
+      <Property ID="Name" Value="PP6" />
+      <Property ID="SectorRef" Value="SubSector1_2" />
+      <Property ID="TriggerEventBufferSize" Value="10" />
+      <Selector ID="BarrierFunctionality" Value="Off" />
+    </Selector>
   </Element>
 </Configuration>

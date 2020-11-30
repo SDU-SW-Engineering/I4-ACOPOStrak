@@ -69,9 +69,9 @@ in step machine *)
 						END_IF
 					ELSE
 						Step := SET_USERDATA;
-				
+					
 					END_IF
-				
+		
 				
 				
 				10:
@@ -119,7 +119,7 @@ in step machine *)
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.StartDirection := mcDIR_UNDEFINED;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_POSITIVE;
 					MC_BR_RoutedMoveAbs_AcpTrak_0.AdvancedParameters.EndDirection := mcDIR_UNDEFINED;
-				
+			
 					
 					
 			

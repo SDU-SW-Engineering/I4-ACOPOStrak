@@ -24,7 +24,7 @@ VAR
 	MC_BR_SegPowerOff_AcpTrak_0 : MC_BR_SegPowerOff_AcpTrak;
 END_VAR
 VAR CONSTANT
-	NUM_SIM_SHUTTLES : USINT := 5; (*Maximum Shuttles Added in the Simulation*)
+	NUM_SIM_SHUTTLES : USINT := 4; (*Maximum Shuttles Added in the Simulation*)
 	MAX_NUM_SHUTTLES : USINT := 40; (*Maximum Shuttles Handled by the Trak*)
 END_VAR
 (*add shuttles for simulation*)
@@ -34,7 +34,9 @@ END_VAR
 (*sequence control*)
 VAR
 	Step : StepEnum;
+	SubStep : SubStepEnum;
 	CntShuttle : UINT;
+	CntReset : UINT;
 	ShuttleAxis : ARRAY[1..MAX_NUM_SHUTTLES] OF McAxisType;
 	i : INT;
 END_VAR
@@ -42,6 +44,7 @@ END_VAR
 VAR
 	MC_BR_AsmPowerOn_AcpTrak_0 : MC_BR_AsmPowerOn_AcpTrak;
 	MC_BR_AsmPowerOff_AcpTrak_0 : MC_BR_AsmPowerOff_AcpTrak;
+	ShuttleUserData : ShuttleUserData_typ;
 	MC_BR_SecAddShuttle_AcpTrak_0 : MC_BR_SecAddShuttle_AcpTrak;
 	MC_BR_AsmGetShuttle_AcpTrak_0 : MC_BR_AsmGetShuttle_AcpTrak;
 	MC_BR_RoutedMoveVel_AcpTrak_0 : MC_BR_RoutedMoveVel_AcpTrak;
@@ -52,4 +55,5 @@ VAR
 	Shuttles_exist : BOOL;
 	HMI_Start : BOOL;
 	HMI_stop : BOOL;
+	MC_BR_ShCopyUserData_AcpTrak_0 : MC_BR_ShCopyUserData_AcpTrak;
 END_VAR

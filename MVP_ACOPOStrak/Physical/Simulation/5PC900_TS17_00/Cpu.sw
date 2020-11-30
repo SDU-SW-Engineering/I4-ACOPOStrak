@@ -12,8 +12,8 @@
     <Task Name="PB3" Source="PB3.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="PP4" Source="PP4.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="PP5" Source="PP5.prg" Memory="UserROM" Language="IEC" Debugging="true" />
-    <Task Name="StartMovem" Source="StartMovement.prg" Memory="UserROM" Language="IEC" Debugging="true" />
     <Task Name="Vis" Source="Vis.prg" Memory="UserROM" Language="IEC" Debugging="true" />
+    <Task Name="StartMovem" Source="StartMovement.prg" Memory="UserROM" Language="IEC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#2" />
   <TaskClass Name="Cyclic#3" />

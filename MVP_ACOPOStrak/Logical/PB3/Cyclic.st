@@ -88,7 +88,8 @@ in step machine *)
 						MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.StartDirection := mcDIR_UNDEFINED;
 						MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.ShuttleOrientation := mcDIR_POSITIVE;
 						MC_BR_RoutedMoveVel_AcpTrak_0.AdvancedParameters.EndDirection := mcDIR_POSITIVE;	
-				
+	
+						
 						IF EDGEPOS (MC_BR_RoutedMoveVel_AcpTrak_0.Active) THEN
 							MC_BR_RoutedMoveVel_AcpTrak_0.Execute := FALSE;
 							MC_BR_BarrierCommand_AcpTrak_0.Execute := FALSE;
